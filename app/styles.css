@@ -12,15 +12,15 @@ body {
   --orange: #fd7702;
   --yellow: #ffbb00;
 
-  --background: var(--white);
-  --accent: var(--blue);
+  --background: var(--ash-black);
+  --accent: var(--white);
 
   margin: 2rem 2rem;
   padding: 0;
   background-color: var(--background);
   color: var(--accent);
   padding-bottom: 100px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 * {
@@ -158,6 +158,18 @@ circle {
   background: var(--accent);
 }
 
+.box:hover {
+  background: var(--yellow);
+}
+
+.dot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin: 0;
+}
+
 .menu {
   display: block;
   position: fixed;
@@ -214,12 +226,11 @@ button path {
   fill: var(--background);
 }
 
-.home_container {
+.container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  min-height: 40vh;
+  min-height: 50vh;
   justify-content: center;
   align-items: left;
-  margin: 2rem 2rem;
+  margin: 0 auto;
 }

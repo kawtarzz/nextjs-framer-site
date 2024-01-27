@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
