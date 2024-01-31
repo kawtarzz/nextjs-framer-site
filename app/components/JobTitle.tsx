@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
 import "@/app/globals.css";
 
