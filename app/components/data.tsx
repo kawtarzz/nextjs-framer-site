@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    title: "cookiJar",
+    title: "cookijar",
     subtitle:
       "React | Bootstrap/Reactstrap | JavaScript | JSON Server | REST API | CSS | HTML",
     description:
@@ -28,7 +28,7 @@ export const projects = [
     solution:
       "Shop the block is a full-stack E-Commerce site built for my final capstone project at Nashville Software School. When designing the application, I created user stories to describe the core functionality of the app with corresponding wireframes. Using DBdiagram, I designed an ERD to display the application’s data structure with multiple one-to-many and many-to-many relationships. The application has full CRUD functionality, allowing the users to add items to their shopping cart, view products, update and delete items from their cart. Upon checkout, the user is presented with their order summary, and once confirming the order, a payment form is required for order placement. I also utilized Firebase for user authentication and authorization. This application was built with React, JavaScript, CSS, HTML, C#, .NET Core, SQL Server, and Bootstrap. I learned a lot about the React framework and how to use it to build a responsive, dynamic application. I also learned how to use Firebase for user authentication and authorization, as well as how to use ADO.NET to build a web API and SQL Server to create a database.",
     image:
-      "https://onedrive.live.com/embed?resid=DEB0002FC4BFD90D%2143209&authkey=%21AD3GNB7Cu18OdG4",
+      "https://onedrive.live.com/embed?resid=DEB0002FC4BFD90D%2143209&authkey=%21AD3GNB7Cu18OdG4&width=790&height=646",
     repolink: "https://github.com/kawtarzz/shoptheblock-ecomm-fullstack",
     demo: "https://locus-app-f0eb9.web.app/",
     path: "/projects/shoptheblock",

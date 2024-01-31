@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
-import "../styles.css";
+import "@/app/globals.css";
 
 export const JobTitle = () => {
   const [currentJobTitleIndex, setCurrentJobTitleIndex] = useState(0);
@@ -23,7 +23,7 @@ export const JobTitle = () => {
     visible: {
       delay: 1,
       opacity: 1,
-      y: `0em`,
+      y: `0`,
       transition: {
         duration: 0.5,
         ease: [0.4, 0.65, 0.3, 0.9],
@@ -57,7 +57,7 @@ export const JobTitle = () => {
         },
       }}
     >
-      <div className="inline-flex flex-wrap">
+      <div className="name-container inline-flex flex-wrap">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -73,7 +73,7 @@ export const JobTitle = () => {
             },
           }}
         >
-          <h2 className="text-6xl font-bold"> {nameIs} </h2>
+          <h2 className="text-4xl lg:text-6xl font-bold"> {nameIs} </h2>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 2.5 }}
@@ -90,7 +90,7 @@ export const JobTitle = () => {
             },
           }}
         >
-          <h2 className="text-6xl font-bold">&nbsp;{name}&nbsp;</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold">&nbsp;{name}&nbsp;</h2>
         </motion.div>
 
         <motion.div
@@ -109,7 +109,8 @@ export const JobTitle = () => {
             },
           }}
         >
-          <h2 className="text-6xl font-bold">
+          {" "}
+          <h2 className="text-4xl lg:text-6xl font-bold">
             {"I'm a"}&nbsp;{jobTitles[currentJobTitleIndex]}
             {"  "}
           </h2>
