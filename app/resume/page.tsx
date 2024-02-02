@@ -19,10 +19,12 @@ export default function Resume() {
         <iframe
           style={{ border: " 1px solid #777" }}
           src="https://indd.adobe.com/view/9ef0e468-663e-4edd-be5c-5b39592b5f39"
-          title="kawtar azzouzi resume"
-          width="800px"
-          height="800px"
-        ></iframe>
+          title="kawtar azzouzi"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          allowFullScreen
+        />
       </div>
     </div>
   );

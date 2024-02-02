@@ -2,8 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "cookijar",
-    subtitle:
-      "React | Bootstrap/Reactstrap | JavaScript | JSON Server | REST API | CSS | HTML",
+    subtitle: "React | Bootstrap | JavaScript | JSON Server | CSS | HTML",
     description:
       "A point-based productivity tracking application with user-defined rewards built with React & JSON server. Created for my client-side capstone at Nashville Software School, this application allows users to gamify their tasks or 'to-do' lists by creating a point system that rewards them with each task completion.",
     problem:

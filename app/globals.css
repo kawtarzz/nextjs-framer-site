@@ -70,10 +70,12 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 body {
   --black: #000000;
   --ash-black: #222;
@@ -104,6 +106,7 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
 }
+
 h1,
 h2,
 h3 {
@@ -131,10 +134,8 @@ footer {
   align-items: center;
   padding: 20px;
   border-top: 1px dotted var(--accent);
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0) 1px,
-    var(--background) 1px
-  );
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px,
+      var(--background) 1px);
   background-size: 4px 4px;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -239,9 +240,10 @@ circle {
   position: fixed;
   top: 10px;
   right: 20px;
-  width: 200px;
-  padding: 20px 20px;
+  width: 130px;
+  padding: 20px 10px;
 }
+
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -309,4 +311,40 @@ button path {
   justify-content: center;
   align-items: left;
   margin: 0 auto;
+  padding: 20px 20px;
+  max-width: 1200px;
+}
+
+.nav-bar {
+  display: inline-flex;
+  flex-direction: row;
+  width: 95%;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  font-size: medium;
+  font-weight: 800;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-link {
+  font-weight: 600;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .5rem 1.5rem;
+}
+
+.social-icons {
+  color: var(--pink);
+  width: 100%;
 }
