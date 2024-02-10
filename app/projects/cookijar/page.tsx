@@ -17,7 +17,7 @@ export default function CookiJar() {
       <div className="container flex justify-center items-center w-full h-auto">
         <div className="projects" key={project.id}>
           <Image
-            src={project.image}
+            src={project.img}
             alt={project.title}
             width={500}
             height={300}
