@@ -2,16 +2,17 @@ import { motion, Variants } from "framer-motion";
 import React from "react";
 import "@/app/globals.css";
 import Link from "next/link";
-import { projects } from "./data";
+import Image from "next/image";
+import Cooki1 from "@/images/cookijar_01.svg";
+import ShopBlockIcon from "@/images/shoptheblock_icon.svg";
 
 interface Props {
   id: number;
   title: string;
   description: string;
-  image?: string;
   repolink?: string;
   demo: string;
-  path: string;
+  img: string;
 }
 
 const cardVariants: Variants = {
@@ -33,10 +34,9 @@ const cardVariants: Variants = {
 export default function Card({
   title,
   description,
-  image,
   repolink,
   demo,
-  path,
+  img,
 }: Props) {
   return (
     <>
@@ -63,48 +63,47 @@ export default function Card({
           className="card"
           variants={cardVariants}
         >
-          <Link href={path}>
-            <img src={image} alt={title} />
-          </Link>
+          {title === "cookijar" ? (
+            <Link href={`/projects/${title}`}>
+              <Image src={Cooki1} alt="cookijar" width={200} height={200} />
+            </Link>
+          ) : (
+            <Link href={`/projects/${title}`}>
+              <Image
+                src={ShopBlockIcon}
+                alt="shoptheblock"
+                width={150}
+                height={200}
+              />
+            </Link>
+          )}
+
           <h2>{title}</h2>
+          <p>{description}</p>
+
+          {repolink && (
+            <Link href={repolink}>
+              <b className="link">Repo</b>
+            </Link>
+          )}
           {description}
         </motion.div>
-
         <div className="inline-flex justify-center items-center w-full h-auto space-evenly">
           {demo && (
             <Link href={demo}>
               <b className="link">Demo</b>
             </Link>
           )}{" "}
-          &nbsp; &nbsp;
-          {path && (
-            <Link href={path}>
-              <b className="link">Details</b>
-            </Link>
-          )}
         </div>
       </motion.div>
     </>
   );
 }
 
-export function CardList() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {projects.map((project) => (
-        <>
-          <Card
-            id={project.id}
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            repolink={project.repolink}
-            demo={project.demo}
-            path={project.path}
-          />
-        </>
-      ))}
+export function CardList({ projects }: { projects: Props[] }) {
+  return projects.map((project: Props) => (
+    <div key={project.id} className="card-list">
+      <Card {...project} />
     </div>
-  );
+  ));
 }

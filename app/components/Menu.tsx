@@ -42,8 +42,8 @@ export default function Menu() {
 
   return (
     <>
-      <div className="nav-container">
-        <Image src={Logo} alt="Kawtar Azzouzi" width={140} />
+      <div className="flex flex-row justify-between items-center">
+        <Image src={Logo} alt="Kawtar Azzouzi" className="logo" width={140} />
 
         {isMobile ? (
           <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -128,33 +128,35 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
 const NavBar = () => {
   return (
     <>
-      <Link className="nav-link" href="/resume">
-        Resume
-      </Link>
-      <Link className="nav-link" href="/contact">
-        Contact
-      </Link>
-      <Link className="nav-link" href="/about">
-        About
-      </Link>
-      <Link className="nav-link" href="/projects">
-        Projects
-      </Link>
-      <div className="social-icons">
-        <Link
-          href="https://www.linkedin.com/in/kawtara"
-          className="nav-link"
-          target="_blank"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
+      <div className="nav-container">
+        <Link className="nav-link" href="/resume">
+          Resume
         </Link>
-        <a
-          href="https://www.github.com/kawtarzz"
-          className="nav-link"
-          target="_blank"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
+        <Link className="nav-link" href="/contact">
+          Contact
+        </Link>
+        <Link className="nav-link" href="/about">
+          About
+        </Link>
+        <Link className="nav-link" href="/projects">
+          Projects
+        </Link>
+        <div className="social-icons">
+          <Link
+            href="https://www.linkedin.com/in/kawtara"
+            className="nav-link"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </Link>
+          <a
+            href="https://www.github.com/kawtarzz"
+            className="nav-link"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </div>
       </div>
     </>
   );
