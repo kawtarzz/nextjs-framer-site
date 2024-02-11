@@ -3,8 +3,8 @@ import React from "react";
 import "@/app/globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import Cooki1 from "@/images/cookijar_01.svg";
-import ShopBlockIcon from "@/images/shoptheblock_icon.svg";
+import Cooki1 from "@/public/images/cookijar_01.svg";
+import ShopBlockIcon from "@/public/images/shoptheblock_icon.svg";
 
 interface Props {
   id: number;
