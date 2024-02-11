@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "@/app/components/data";
 import "@/app/globals.css";
+import Image from "next/image";
 
 export default function ShopTheBlock() {
   const project = projects[1];
@@ -15,11 +16,11 @@ export default function ShopTheBlock() {
       </a>
       <div className="container flex justify-center items-center w-full h-auto">
         <div className="projects" key={project.id}>
-          <img
-            src={project.image}
-            alt=""
-            className="mx-auto mb-4 rounded-lg"
-            style={{ maxWidth: "80%", maxHeight: "400px" }}
+          <Image
+            src={project.img}
+            alt={project.title}
+            width={500}
+            height={300}
           />
           <h1 className="text-3xl font-bold">{project.title}</h1>
           <h2 className="text-xl text-gray-600 mb-4">{project.subtitle}</h2>
