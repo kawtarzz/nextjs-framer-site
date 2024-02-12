@@ -42,8 +42,8 @@ export default function Menu() {
 
   return (
     <>
-      <div className="flex flex-row justify-between items-center">
-        <Image src={Logo} alt="Kawtar Azzouzi" className="logo" width={140} />
+      <div className="menu-container">
+        <Image src={Logo} alt="Kawtar Logo" className="logo" />
 
         {isMobile ? (
           <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />

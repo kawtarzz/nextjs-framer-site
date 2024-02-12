@@ -9,6 +9,7 @@ export const JobTitle = () => {
 
   const nameIs = "My name is";
   const name = "Kawtar.";
+  const iAm = "";
   const jobTitles = [
     "App Developer",
     "UI/UX Designer",
@@ -56,7 +57,7 @@ export const JobTitle = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1.5,
-            delay: 1.5,
+            delay: 5,
             ease: [0.1, 0.41, 0.4, 1.01],
             scale: {
               type: "spring",
@@ -73,7 +74,7 @@ export const JobTitle = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 2,
-            delay: 2,
+            delay: 2.5,
             ease: [0.1, 0.41, 0.2, 0.41, 1.01],
             scale: {
               type: "spring",
@@ -87,6 +88,24 @@ export const JobTitle = () => {
           <h1>&nbsp;{name}&nbsp;</h1>
         </motion.div>
         <br />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 2,
+            delay: 3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 60,
+              restDelta: 0.01,
+              variants: characterAnimation,
+            },
+          }}
+        >
+          <h1>&nbsp;{iAm}&nbsp;</h1>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
