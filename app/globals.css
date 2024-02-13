@@ -31,9 +31,16 @@ a {
   text-decoration: none;
 }
 
+.menu a {
+  color: var(--background);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 1rem;
+
+}
+
 .section {
   margin: 0 auto;
-  color: var(--accent);
 }
 
 .container {
@@ -137,6 +144,7 @@ circle {
   height: 200px;
   border-radius: 50%;
   background: var(--accent);
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     width: 100px;
@@ -169,11 +177,13 @@ circle {
 .menu {
   display: sticky;
   position: fixed;
-  top: 0;
+  top: 12px;
   right: 20px;
   width: 130px;
   padding: 1rem .5rem;
 }
+
+
 
 .menu-container {
   display: flex;
@@ -204,6 +214,7 @@ circle {
 .logo {
   width: 10rem;
   height: 5rem;
+  margin: 1rem 1rem;
 }
 
 ul {
@@ -216,7 +227,6 @@ ul {
 }
 
 li {
-  color: var(--black);
   font-weight: 900;
   display: block;
 }
@@ -261,6 +271,10 @@ button path {
   align-items: right;
   padding: 0 1rem;
   font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--yellow);
 }
 
 .social-icons {

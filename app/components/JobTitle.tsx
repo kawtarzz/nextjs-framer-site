@@ -8,13 +8,11 @@ export const JobTitle = () => {
   const [currentJobTitleIndex, setCurrentJobTitleIndex] = useState(0);
 
   const nameIs = "My name is";
-  const name = "Kawtar.";
-  const iAm = "";
   const jobTitles = [
-    "App Developer",
-    "UI/UX Designer",
-    "Web Developer",
-    "Graphic Designer",
+    "an App Developer",
+    "a UI/UX Designer",
+    "a Web Developer",
+    "a Graphic Designer",
   ];
 
   const characterAnimation = {
@@ -27,7 +25,7 @@ export const JobTitle = () => {
       opacity: 1,
       y: `0`,
       transition: {
-        duration: stagger(0.1),
+        duration: stagger(0.5),
         ease: [0.4, 0.65, 0.3, 0.9],
       },
     },
@@ -57,7 +55,7 @@ export const JobTitle = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1.5,
-            delay: 5,
+            delay: 2,
             ease: [0.1, 0.41, 0.4, 1.01],
             scale: {
               type: "spring",
@@ -85,9 +83,8 @@ export const JobTitle = () => {
             },
           }}
         >
-          <h1>&nbsp;{name}&nbsp;</h1>
+          <h1>&nbsp;Kawtar. &nbsp;</h1>
         </motion.div>
-        <br />
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -104,7 +101,7 @@ export const JobTitle = () => {
             },
           }}
         >
-          <h1>&nbsp;{iAm}&nbsp;</h1>
+          <h1>Im&nbsp; </h1>
         </motion.div>
 
         <motion.div
@@ -112,7 +109,7 @@ export const JobTitle = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 2,
-            delay: 3,
+            delay: 3.5,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
               type: "spring",
