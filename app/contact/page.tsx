@@ -44,73 +44,94 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container contact-page">
-        <div className="text-zone">
-          <h1>Contact</h1>
-          <h3>
-            I&apos;m currently available for freelance work and open to new
-            opportunities.
-          </h3>
-          <p>
-            Have a project you&apos;d like to discuss or a role you&apos;d like
-            to fill? Or if you just want to say hello, I&apos;d love to hear
-            from you! Feel free to contact me using the form below or at:
-          </p>
-          <br />
-          <h2>
-            <a href="mailto:kawtaryazzouzi@gmail.com">
-              <i>KawtaryAzzouzi@gmail.com</i>
-            </a>
-          </h2>
-          <div className="contact-form">
-            <form onSubmit={sendEmail}>
-              <ul>
-                <li>
-                  <input
-                    placeholder="Name"
-                    type="text"
-                    name="name"
-                    value={templateParams.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    value={templateParams.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
-                    value={templateParams.subject}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </li>
-                <li>
-                  <textarea
-                    placeholder="Hi Kawtar, I'd like to talk about..."
-                    name="message"
-                    value={templateParams.message}
-                    onChange={handleInputChange}
-                    required
-                  ></textarea>
-                </li>
-                <li>
-                  <input type="submit" className="button" value="SEND" />
-                </li>
-              </ul>
-            </form>
+      <div className="flex justify-center items-center container">
+        <p className="text-2xl font-bold my-8">
+          Open to freelance or full-time opportunities. Lets connect!
+        </p>
+        <p className="text-4xl font-bold my-8">Contact</p>
+        <form onSubmit={sendEmail} className="w-full max-w-lg">
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-first-name"
+              >
+                Name
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                placeholder="Name"
+                type="text"
+                name="name"
+                value={templateParams.name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="w-full md:w-1/2 px-3">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-email"
+              >
+                Email
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                name="email"
+                type="text"
+                placeholder="JaneDoe@email.com"
+                onChange={handleInputChange}
+                value={templateParams.email}
+                required
+              />
+            </div>
           </div>
-        </div>
+
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full px-3">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-subject"
+              >
+                Subject
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                name="subject"
+                type="text"
+                value={templateParams.subject}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full px-3">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-message"
+              >
+                Message
+              </label>
+              <textarea
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                name="message"
+                placeholder="Your message here..."
+                value={templateParams.message}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="md:flex md:items-center">
+            <div className="md:w-1/3">
+              <button className="btn-blue" type="submit" value="Send">
+                Send
+              </button>
+            </div>
+            <div className="md:w-2/3"></div>
+          </div>
+        </form>
       </div>
     </>
   );
