@@ -10,6 +10,7 @@ export function HelloHero() {
       <motion.div
         transition={{
           duration: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
           delay: 1.5,
           scale: {
             type: "spring",
