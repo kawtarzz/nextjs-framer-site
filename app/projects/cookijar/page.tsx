@@ -19,8 +19,10 @@ export default function CookiJar() {
           <Image
             src={project.img}
             alt={project.title}
+            layout="fill"
+            objectFit="cover"
             width={500}
-            height={300}
+            height={500}
           />
           <h1 className="text-3xl font-bold">{project.title}</h1>
           <h2 className="text-xl text-gray-600 mb-4">{project.subtitle}</h2>

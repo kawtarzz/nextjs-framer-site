@@ -19,21 +19,20 @@ export default function ShopTheBlock() {
           <Image
             src={project.img}
             alt={project.title}
+            priority={true}
+            layout="fill"
+            objectFit="cover"
             width={500}
-            height={300}
+            height={500}
           />
           <h1 className="text-3xl font-bold">{project.title}</h1>
-          <h2 className="text-xl text-gray-600 mb-4">{project.subtitle}</h2>
           <p className="mb-4">{project.description}</p>
           <hr />
           <h2>Problem:</h2>
           <p>{project.problem}</p>
           <h2>Solution:</h2>
           <p className="solution">{project.solution}</p>
-          <h2 className="tech-stack flex items-center space-x-2 ml-4">
-            Tech Stack:
-          </h2>
-          <h3>{project.subtitle}</h3>
+
           <hr></hr>
           <div className="inline-flex items-center w-full h-auto space-evenly link pt-8 text-base font-semibold leading-7">
             <a className="text-sky-500 hover:text-sky-600" href="/">
