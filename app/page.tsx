@@ -40,7 +40,7 @@ export default function Home() {
         {greeting.split("").map((char, index) => (
           <motion.span
             key={char + "-" + index}
-            className="text-6xl lg:text-6xl font-bold"
+            className={"hello-text " + char + "-" + index}
             initial={{ opacity: 0, scale: 1.5 }}
             animate={{ opacity: 1, scale: 1, x: [null, 40, 10] }}
             transition={{

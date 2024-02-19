@@ -25,6 +25,7 @@ interface MobileMenuProps {
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isHome, setIsHome] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth < 768) {
@@ -40,24 +41,46 @@ export default function Menu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+  }, []);
+
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.5,
-          ease: [0.1, 0.41, 0.4, 1.01],
-          scale: {
-            type: "spring",
-            damping: 5,
-            stiffness: 60,
-            restDelta: 0.01,
-          },
-        }}
-      >
-        <div className="flex flex-row justify-between items-center">
+      {isHome && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.5,
+            delay: 3,
+            ease: [0.1, 0.41, 0.4, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 60,
+              restDelta: 0.01,
+            },
+          }}
+        >
+          <div className="navBar">
+            <Link href="/">
+              <Image src={Logo} alt="Kawtar Logo" className="logo" />
+            </Link>
+            {isMobile ? (
+              <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+            ) : (
+              <NavBar />
+            )}
+          </div>
+        </motion.div>
+      )}
+      {!isHome && (
+        <div className="navBar">
           <Link href="/">
             <Image src={Logo} alt="Kawtar Logo" className="logo" />
           </Link>
@@ -67,7 +90,7 @@ export default function Menu() {
             <NavBar />
           )}
         </div>
-      </motion.div>
+      )}
     </>
   );
 }

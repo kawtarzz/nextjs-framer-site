@@ -9,13 +9,15 @@ body {
   --white: #fafafa;
   --sky: #00ccff;
   --green: #22dddd;
+  --mint-green: #00ffcc;
   --blue: #1300ff;
   --dusk: #6600ff;
-  --purple: #9900ff;
-  --pink: #ff0066;
-  --red: #fe0222;
-  --orange: #fd7702;
+  --purple: #e959ff;
+  --pink: hsl(338, 100%, 56%);
+  --red: #f42e2e;
+  --orange: #ff7c1e;
   --yellow: #ffbb00;
+  --light-pink: #ff99cc;
 
   --background: var(--ash-black);
   --accent: var(--white);
@@ -41,15 +43,15 @@ a {
 
 .section {
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1200px;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0rem 2.5rem;
 }
 
 * {
@@ -153,9 +155,18 @@ circle {
   }
 }
 
-
 .box:hover {
   background: var(--yellow);
+}
+
+.jobTitles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .app {
@@ -196,25 +207,55 @@ circle {
   max-width: 1200px;
 }
 
-.hello {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 2rem;
-  font-weight: 900;
-  font-style: oblique;
-  justify-content: left;
-  align-items: left;
 
-  @media screen and (max-width: 768px) {
+
+.hello-text {
+  margin: 0 .1rem;
+  font-weight: 570;
+  font-size: 4.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hello-text {
     font-size: 2.5rem;
+  }
+
+}
+
+
+.H-0:hover {
+  color: var(--light-pink);
+}
+
+.e-1:hover {
+  color: var(--sky);
+}
+
+.l-2:hover {
+  color: var(--yellow);
+}
+
+.l-3:hover {
+  color: var(--mint-green);
+}
+
+.o-4:hover {
+  color: var(--orange);
+}
+
+@media screen and (max-width: 768px) {
+  .hello {
+    display: flex;
+    flex-direction: row;
+    font-size: 3.5rem;
   }
 }
 
 .logo {
   width: 10rem;
   height: 5rem;
-  margin: 1rem 1rem;
+  margin: 1rem 0rem;
+  padding-right: 20px;
 }
 
 ul {
@@ -260,10 +301,14 @@ button path {
   fill: var(--background);
 }
 
-
-.nav-container {
+.navBar {
   display: flex;
-  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem auto;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .nav-link {
@@ -271,6 +316,7 @@ button path {
   align-items: right;
   padding: 0 1rem;
   font-weight: 600;
+  margin: 0;
 }
 
 .nav-link:hover {

@@ -1,7 +1,6 @@
 "use client";
 import "@/app/globals.css";
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card";
 
 const ProjectsPage = () => {
   return (

@@ -9,13 +9,13 @@ export function HelloHero() {
     <>
       <motion.div
         transition={{
-          duration: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-          delay: 1.5,
+          delay: 2,
+          duration: 1.5,
+          ease: [0, 0.61, 0.7, 1.01],
           scale: {
             type: "spring",
             damping: 5,
-            stiffness: 100,
+            stiffness: 50,
             restDelta: 0.001,
           },
         }}
