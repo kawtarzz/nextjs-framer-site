@@ -186,12 +186,11 @@ circle {
 }
 
 .hello {
-  max-height: fit-content;
+  max-height: 50vh;
 }
 
 @media screen and (max-width: 760px) {
   .hello {
-    background: var(--pink);
     max-height: 20vh;
   }
 }
