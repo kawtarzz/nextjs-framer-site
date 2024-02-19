@@ -19,7 +19,6 @@ export default function CookiJar() {
           <Image
             src={project.img}
             alt={project.title}
-            layout="fill"
             objectFit="cover"
             width={500}
             height={500}

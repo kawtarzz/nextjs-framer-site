@@ -20,7 +20,6 @@ export default function ShopTheBlock() {
             src={project.img}
             alt={project.title}
             priority={true}
-            layout="fill"
             objectFit="cover"
             width={500}
             height={500}

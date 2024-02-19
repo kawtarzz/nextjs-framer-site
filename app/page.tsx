@@ -7,6 +7,10 @@ import { CardList } from "./components/Card";
 import { projects } from "./components/data";
 
 export default function Home() {
+  return <LandingPage />;
+}
+
+function LandingPage() {
   const greeting = "Hello";
 
   const [toggleCard, setToggleCard] = useState(false);

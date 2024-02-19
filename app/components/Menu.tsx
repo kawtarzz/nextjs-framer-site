@@ -28,7 +28,7 @@ export default function Menu() {
   const [isHome, setIsHome] = useState(false);
 
   const handleResize = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 800) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -69,7 +69,13 @@ export default function Menu() {
         >
           <div className="navBar">
             <Link href="/">
-              <Image src={Logo} alt="Kawtar Logo" className="logo" />
+              <Image
+                src={Logo}
+                alt="Kawtar Logo"
+                className="logo"
+                priority={true}
+                width={100}
+              />
             </Link>
             {isMobile ? (
               <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
