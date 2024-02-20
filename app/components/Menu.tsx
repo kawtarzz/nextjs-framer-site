@@ -20,6 +20,8 @@ const itemVariants: Variants = {
 interface MobileMenuProps {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  to?: string;
+  children?: React.ReactNode;
 }
 
 export default function Menu() {
@@ -152,19 +154,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
           >
             <motion.li variants={itemVariants}>
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </motion.li>
             <motion.li variants={itemVariants}>
-              <a href="/projects">Projects</a>
+              <Link href="/projects">Projects</Link>
             </motion.li>
             <motion.li variants={itemVariants}>
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
             </motion.li>
             <motion.li variants={itemVariants}>
-              <a href="/resume">Resume</a>
+              <Link href="/resume">Resume</Link>
             </motion.li>
             <motion.li variants={itemVariants}>
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </motion.li>
           </motion.ul>
         </motion.nav>
@@ -197,13 +199,13 @@ const NavBar = () => {
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </Link>
-          <a
+          <Link
             href="https://www.github.com/kawtarzz"
             className="nav-link"
             target="_blank"
           >
             <FontAwesomeIcon icon={faGithub} />
-          </a>
+          </Link>
         </div>
       </div>
     </>

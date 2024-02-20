@@ -4,6 +4,6 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import { JobTitle } from "@/app/components/JobTitle";
 
-export function HelloHero({ toggleCard }: { toggleCard: boolean }) {
-  return <>{!toggleCard && <JobTitle />}</>;
+export function HelloHero() {
+  return <JobTitle />;
 }
