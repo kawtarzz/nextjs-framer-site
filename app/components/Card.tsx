@@ -41,7 +41,6 @@ export default function Card({
   return (
     <>
       <motion.div
-        className="card-container"
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -60,7 +59,6 @@ export default function Card({
               restDelta: 0.01,
             },
           }}
-          className="card"
           variants={cardVariants}
         >
           {title === "cookijar" ? (
