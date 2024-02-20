@@ -1,14 +1,11 @@
 "use client";
 import "@/app/globals.css";
 import React, { useState, useEffect } from "react";
+import { CardList } from "../components/Card";
+import { projects } from "../components/data";
 
 const ProjectsPage = () => {
-  return (
-    <div>
-      <h1>Projects</h1>
-      <p>Here are some of my projects</p>
-    </div>
-  );
+  return <CardList projects={projects} />;
 };
 
 export default ProjectsPage;

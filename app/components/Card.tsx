@@ -1,16 +1,22 @@
+"use client";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import "@/app/globals.css";
 import Link from "next/link";
+import { projects } from "./data";
 import Image from "next/image";
 import Cooki1 from "@/public/images/cookijar_01.svg";
 import ShopBlockIcon from "@/public/images/shoptheblock_icon.svg";
+import "@/app/globals.css";
 
 interface Props {
   id: number;
   title: string;
+  subtitle: string;
   description: string;
-  repolink?: string;
+  problem: string;
+  solution: string;
+  repolink: string;
   demo: string;
   img: string;
 }
@@ -32,21 +38,26 @@ const cardVariants: Variants = {
 };
 
 export default function Card({
+  id,
   title,
   description,
+  subtitle,
+  problem,
+  solution,
   repolink,
   demo,
   img,
 }: Props) {
+  const [toggleCardContent, setToggleCardContent] = React.useState(false);
+
   return (
     <>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 1 }}
       >
         <motion.div
-          id="#projects"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -61,38 +72,45 @@ export default function Card({
           }}
           variants={cardVariants}
         >
-          {title === "cookijar" ? (
-            <Link href={`/projects/${title}`}>
-              <Image src={Cooki1} alt="cookijar" width={200} height={200} />
-            </Link>
-          ) : (
-            <Link href={`/projects/${title}`}>
+          <div className="card-title">
+            <div className="card-image-container">
               <Image
-                src={ShopBlockIcon}
-                alt="shoptheblock"
-                width={150}
-                height={200}
+                src={img}
+                alt="project image"
+                priority={true}
+                width={500}
+                height={500}
+                className="card-image"
               />
-            </Link>
-          )}
-
-          <h2>{title}</h2>
-          <p>{description}</p>
-
-          {repolink && (
-            <Link href={repolink}>
-              <b className="link">Repo</b>
-            </Link>
-          )}
-          {description}
+            </div>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
+            <div className="btn-container">
+              <Link href={repolink} target="_blank">
+                <button>Repo</button>
+              </Link>
+              <Link href={demo} target="_blank">
+                <button>Demo</button>
+              </Link>
+              <button
+                className="btn-pink"
+                onClick={() => setToggleCardContent(!toggleCardContent)}
+              >
+                {toggleCardContent ? "Hide Details" : "Show Details"}
+              </button>
+            </div>
+          </div>
+          <div className="card-content">
+            {toggleCardContent && (
+              <>
+                <h3>{description}</h3>
+                <br />
+                <p>{problem}</p>
+                <p>{solution}</p>
+              </>
+            )}
+          </div>
         </motion.div>
-        <div className="inline-flex justify-center items-center w-full h-auto space-evenly">
-          {demo && (
-            <Link href={demo}>
-              <b className="link">Demo</b>
-            </Link>
-          )}{" "}
-        </div>
       </motion.div>
     </>
   );

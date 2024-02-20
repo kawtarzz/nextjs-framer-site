@@ -1,9 +1,7 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Menu from "./components/Menu";
-import React, { useState } from "react";
-import { HelloHero } from "./components/HelloHero";
+import Menu from "@/app/components/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <section className="section">
-          <div className="container">
-            <Menu />
-            {children}
-          </div>
+          <div className="container">{children}</div>
         </section>
       </body>
     </html>
