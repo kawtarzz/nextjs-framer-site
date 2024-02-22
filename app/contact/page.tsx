@@ -1,38 +1,50 @@
 "use client";
-import { useEffect, useState } from "react";
-import Loader from "react-loaders";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "@/app/globals.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [templateParams, setTemplateParams] = useState({
-    name: "",
-    email: "",
-    subject: "",
+    to_name: "Kawtar Azzouzi",
+    from_name: "",
     message: "",
+    reply_to: "",
   });
+  const [captchaComplete, setCaptchaComplete] = useState<string | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_ii6ih5p",
-        "template_fjl9j6l",
-        templateParams,
-        "oVuhuWy96mVwChvm2"
-      )
-      .then(
-        () => {
-          alert("Message successfully sent!");
-          window.location.reload();
-        },
-        () => {
-          alert(
-            "Failed to send the message, please try again or contact me at Kawtaryazzouzi@gmail.com"
-          );
-        }
-      );
+    if (
+      !templateParams.from_name ||
+      !templateParams.reply_to ||
+      !templateParams.message
+    ) {
+      alert("Please fill out all fields");
+      return;
+    } else {
+      emailjs
+        .send(
+          "service_ii6ih5p",
+          "template_fjl9j6l",
+          templateParams,
+          "oVuhuWy96mVwChvm2"
+        )
+        .then(
+          () => {
+            alert(
+              "Message successfully sent! I will get back to your shortly. Thanks!"
+            );
+            window.location.reload();
+          },
+          () => {
+            alert(
+              "Failed to send the message, please try again or contact me directly at Kawtaryazzouzi@gmail.com"
+            );
+          }
+        );
+    }
   };
 
   const handleInputChange = (
@@ -54,16 +66,16 @@ const Contact = () => {
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-first-name"
+                htmlFor="from_name"
               >
-                Name
+                Your Name
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                placeholder="Name"
+                placeholder="Your Name"
                 type="text"
-                name="name"
-                value={templateParams.name}
+                name="from_name"
+                value={templateParams.from_name}
                 onChange={handleInputChange}
                 required
               />
@@ -71,17 +83,17 @@ const Contact = () => {
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-email"
+                htmlFor="reply_to"
               >
-                Email
+                Your Email
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
-                name="email"
+                name="reply_to"
                 type="text"
                 placeholder="JaneDoe@email.com"
                 onChange={handleInputChange}
-                value={templateParams.email}
+                value={templateParams.reply_to}
                 required
               />
             </div>
@@ -91,25 +103,7 @@ const Contact = () => {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-subject"
-              >
-                Subject
-              </label>
-              <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                name="subject"
-                type="text"
-                value={templateParams.subject}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-message"
+                htmlFor="message"
               >
                 Message
               </label>
@@ -124,8 +118,15 @@ const Contact = () => {
             </div>
           </div>
           <div className="md:flex md:items-center">
+            <div className="flex justify-center">
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                onChange={setCaptchaComplete}
+              />
+            </div>
+
             <div className="md:w-1/3">
-              <button className="btn-blue" type="submit" value="Send">
+              <button className="btn-blue" type="submit" value="Submit">
                 Send
               </button>
             </div>

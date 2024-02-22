@@ -19,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <section className="section">
-          <div className="container">{children}</div>
+          <div className="container">
+            <Menu />
+            {children}
+          </div>
         </section>
       </body>
     </html>
