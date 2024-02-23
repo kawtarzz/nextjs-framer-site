@@ -19,10 +19,12 @@ export default function Home() {
   });
 
   return (
-    <LandingPage
-      toggleCard={toggleCard}
-      handleToggleCard={handleToggleCard}
-      boxClass={boxClass}
-    />
+    <div className="container">
+      <LandingPage
+        toggleCard={toggleCard}
+        handleToggleCard={handleToggleCard}
+        boxClass={boxClass}
+      />
+    </div>
   );
 }

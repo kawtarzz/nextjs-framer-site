@@ -95,6 +95,7 @@ a {
   margin: 0 auto;
   width: 100%;
   z-index: 1;
+  max-width: 1200px;
 }
 
 * {
@@ -268,13 +269,7 @@ circle {
   }
 }
 
-.app {
-  display: flex;
-  align-items: center;
-  color: var(--accent);
-  margin: 0;
-  padding: 1rem;
-}
+
 
 .dot {
   width: 80px;
@@ -296,12 +291,8 @@ circle {
 
 .hello-text {
   display: flex;
-  flex-direction: row;
-  font-weight: 570;
-  font-size: 4rem;
-  text-align: left;
-  margin: 0 0;
-  padding-left: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 4.5rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -309,8 +300,9 @@ circle {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 550;
+
   }
 }
 
@@ -323,8 +315,6 @@ circle {
   align-items: center;
   margin: 0 auto;
 }
-
-
 
 .H-0:hover {
   color: var(--light-pink);
@@ -381,19 +371,17 @@ button path {
   max-width: 1200px;
 }
 
-.name-job-block {
+.hello-block {
   display: block;
-  flex-direction: row;
-  align-items: left;
   justify-content: left;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  margin-top: -4.5rem;
+  max-height: 600px;
 }
 
 @media screen and (max-width: 800px) {
-  .name-job-block {
+  .hello-block {
     display: flex;
     margin-top: -3.5rem;
     flex-direction: row;
@@ -549,10 +537,25 @@ li:hover {
 .landing-page {
   display: flex;
   flex-direction: column;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
   align-items: left;
   justify-content: left;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  padding: 1rem 0;
+  padding: 0rem 0rem;
+  padding-right: 5rem;
+  margin-top: -5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .intro {
+    padding: 0rem 2rem;
+    padding-right: 0rem;
+    margin-top: -2.5rem;
+  }
 }
