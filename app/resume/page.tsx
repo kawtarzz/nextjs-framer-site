@@ -11,7 +11,7 @@ export default function Resume() {
   };
 
   return (
-    <div className="flex justify-center items-center resume-page">
+    <div className="container resume-page">
       <button className="flat-button" onClick={() => downloadPDF()}>
         Download Resume
       </button>
@@ -20,8 +20,8 @@ export default function Resume() {
           style={{ border: " 1px solid #777" }}
           src="https://indd.adobe.com/view/9ef0e468-663e-4edd-be5c-5b39592b5f39"
           title="kawtar azzouzi"
-          width="718px"
-          height="800px"
+          width="100%"
+          height="100%"
           frameBorder="0"
           allowFullScreen
         />
