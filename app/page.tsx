@@ -2,7 +2,6 @@
 import "@/app/globals.css";
 import React, { useState, useEffect } from "react";
 import LandingPage from "@/app/components/LandingPage";
-import Menu from "./components/Menu";
 
 export default function Home() {
   const [boxClass, setBoxClass] = useState("");
@@ -20,12 +19,10 @@ export default function Home() {
   });
 
   return (
-    <>
-      <LandingPage
-        toggleCard={toggleCard}
-        handleToggleCard={handleToggleCard}
-        boxClass={boxClass}
-      />
-    </>
+    <LandingPage
+      toggleCard={toggleCard}
+      handleToggleCard={handleToggleCard}
+      boxClass={boxClass}
+    />
   );
 }

@@ -40,15 +40,29 @@ export const JobTitle = () => {
   }, []);
 
   return (
-    <>
-      <div className="hello-text-container">
+    <div className="name-job-block hello-text">
+      <motion.div
+        initial={{ opacity: 0, scale: 2 }}
+        animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
+        transition={{
+          duration: 1.5,
+          delay: 2,
+          ease: [0, 0.71, 0.2, 1.01],
+          scale: {
+            type: "spring",
+            damping: 5,
+            stiffness: 80,
+            restDelta: 0.01,
+          },
+        }}
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 2 }}
-          animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
+          initial={{ opacity: 0, scale: 2.5 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 1.5,
-            delay: 2,
-            ease: [0, 0.71, 0.2, 1.01],
+            duration: 2.5,
+            delay: 3,
+            ease: [0.1, 0.41, 0.61, 1.01],
             scale: {
               type: "spring",
               damping: 5,
@@ -57,54 +71,15 @@ export const JobTitle = () => {
             },
           }}
         >
-          <div className="inline-flex flex-wrap">
-            <motion.div
+          {nameIs.split("").map((char, index) => (
+            <motion.span
+              key={char + "-" + index}
               initial={{ opacity: 0, scale: 2.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
-                duration: 2.5,
-                delay: 3,
-                ease: [0.1, 0.41, 0.61, 1.01],
-                scale: {
-                  type: "spring",
-                  damping: 5,
-                  stiffness: 80,
-                  restDelta: 0.01,
-                },
-              }}
-            >
-              {nameIs.split("").map((char, index) => (
-                <motion.span
-                  key={char + "-" + index}
-                  className="text-6xl font-bold"
-                  initial={{ opacity: 0, scale: 2.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 1.5,
-                    delay: 3.5 + index / 10,
-                    ease: [0, 0.71, 0.2, 1.01],
-                    scale: {
-                      type: "spring",
-                      damping: 5,
-                      stiffness: 80,
-                      restDelta: 0.01,
-                      variants: characterAnimation,
-                    },
-                  }}
-                >
-                  {char}
-                </motion.span>
-              ))}{" "}
-            </motion.div>
-
-            <motion.div
-              className="hello-text"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
                 duration: 1.5,
-                delay: 4.5,
-                ease: [0.1, 0.71, 0.2, 1.01],
+                delay: 3.5 + index / 10,
+                ease: [0, 0.71, 0.2, 1.01],
                 scale: {
                   type: "spring",
                   damping: 5,
@@ -114,12 +89,31 @@ export const JobTitle = () => {
                 },
               }}
             >
-              {"I'm"}&nbsp;{jobTitles[currentJobTitleIndex]}
-              {"  "}
-            </motion.div>
-          </div>
+              {char}
+            </motion.span>
+          ))}{" "}
         </motion.div>
-      </div>
-    </>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.5,
+            delay: 4.5,
+            ease: [0.1, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 80,
+              restDelta: 0.01,
+              variants: characterAnimation,
+            },
+          }}
+        >
+          {"I'm"}&nbsp;{jobTitles[currentJobTitleIndex]}
+          {"  "}
+        </motion.div>
+      </motion.div>
+    </div>
   );
 };
