@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import { useAnimate, motion, stagger } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export const JobTitle = () => {

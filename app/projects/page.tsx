@@ -1,11 +1,9 @@
 "use client";
 import "@/app/globals.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { CardList } from "../components/Card";
 import { projects } from "../components/data";
 import { motion } from "framer-motion";
-import { Router, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
   const projectsHeading = "Projects";
