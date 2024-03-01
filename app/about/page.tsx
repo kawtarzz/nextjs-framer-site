@@ -2,16 +2,16 @@
 import React from "react";
 import "@/app/globals.css";
 import Image from "next/image";
-import Kawtar from "@/images/Kawtar.svg";
+import Kawtar from "@/images/kawtar.svg";
 
 export default function About() {
   return (
     <>
       <div className="about-page container">
         <Image
+          priority={true}
           src={Kawtar}
           alt="Kawtar image"
-          priority={true}
           width={500}
           height={500}
         />
