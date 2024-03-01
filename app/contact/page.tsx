@@ -44,11 +44,10 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center container">
+      <div className="contact-page container">
         <p className="text-2xl font-bold my-8">
           Open to freelance or full-time opportunities. Lets connect!
         </p>
-        <p className="text-4xl font-bold my-8">Contact</p>
         <form onSubmit={sendEmail} className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -123,13 +122,12 @@ const Contact = () => {
               />
             </div>
           </div>
-          <div className="md:flex md:items-center">
-            <div className="md:w-1/3">
-              <button className="btn-blue" type="submit" value="Send">
+          <div className="md:flex">
+            <div>
+              <button className="alt-btn" type="submit" value="Send">
                 Send
               </button>
             </div>
-            <div className="md:w-2/3"></div>
           </div>
         </form>
       </div>

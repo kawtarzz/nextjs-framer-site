@@ -562,3 +562,16 @@ li:hover {
   justify-content: center;
   margin: 0 auto;
 }
+
+
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 100%;
+  color: var(--accent);
+}
