@@ -37,7 +37,7 @@ export const JobTitle = () => {
     }, 1500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [jobTitles.length, currentJobTitleIndex]);
 
   return (
     <>

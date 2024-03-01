@@ -73,17 +73,13 @@ a {
 }
 
 .section {
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 0rem 2rem;
+  padding: 0rem;
 }
 
 .container {
-  display: inline-flex;
-  flex-direction: column;
-  width: 100%;
-  z-index: 1;
-  max-width: 1200px;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 * {
@@ -548,8 +544,6 @@ li:hover {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
   padding: 1rem 0;
 }
 
@@ -567,5 +561,4 @@ li:hover {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 100%;
 }
