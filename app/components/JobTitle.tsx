@@ -40,23 +40,24 @@ export const JobTitle = () => {
   }, []);
 
   return (
-    <div className="intro container">
-      <div className="hello-block hello-text">
-        <motion.div
-          initial={{ opacity: 0, scale: 2 }}
-          animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
-          transition={{
-            duration: 1.5,
-            delay: 2,
-            ease: [0, 0.71, 0.2, 1.01],
-            scale: {
-              type: "spring",
-              damping: 5,
-              stiffness: 80,
-              restDelta: 0.01,
-            },
-          }}
-        >
+    <>
+      <div className="intro container">
+        <div className="hello-block hello-text">
+          <motion.div
+            initial={{ opacity: 0, scale: 2 }}
+            animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
+            transition={{
+              duration: 1.5,
+              delay: 2,
+              ease: [0, 0.71, 0.2, 1.01],
+              scale: {
+                type: "spring",
+                damping: 5,
+                stiffness: 80,
+                restDelta: 0.01,
+              },
+            }}
+          />
           <motion.div
             initial={{ opacity: 0, scale: 2.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -94,7 +95,10 @@ export const JobTitle = () => {
               </motion.span>
             ))}{" "}
           </motion.div>
-
+        </div>
+      </div>
+      <div className="intro container">
+        <div className="hello-block hello-text">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -114,8 +118,8 @@ export const JobTitle = () => {
             {"I'm"}&nbsp;{jobTitles[currentJobTitleIndex]}
             {"  "}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

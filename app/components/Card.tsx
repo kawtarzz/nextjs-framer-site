@@ -3,10 +3,7 @@ import { motion, Variants } from "framer-motion";
 import React from "react";
 import "@/app/globals.css";
 import Link from "next/link";
-import { projects } from "./data";
 import Image from "next/image";
-import Cooki1 from "@/public/images/cookijar_01.svg";
-import ShopBlockIcon from "@/public/images/shoptheblock_icon.svg";
 import "@/app/globals.css";
 
 interface Props {
@@ -38,10 +35,8 @@ const cardVariants: Variants = {
 };
 
 export default function Card({
-  id,
   title,
   description,
-  subtitle,
   problem,
   solution,
   repolink,
@@ -72,41 +67,40 @@ export default function Card({
           }}
           variants={cardVariants}
         >
-          <div className="card-title">
-            <div className="card-image-container">
-              <Image
-                src={img}
-                alt="project image"
-                priority={true}
-                width={500}
-                height={500}
-                className="card-image"
-              />
-            </div>
-            <h2>{title}</h2>
-            <p>{subtitle}</p>
-            <div className="btn-container">
-              <Link href={repolink} target="_blank">
-                <button>Repo</button>
-              </Link>
-              <Link href={demo} target="_blank">
-                <button>Demo</button>
-              </Link>
-              <button
-                className="btn-pink"
-                onClick={() => setToggleCardContent(!toggleCardContent)}
-              >
-                {toggleCardContent ? "Hide Details" : "Show Details"}
-              </button>
-            </div>
-          </div>
           <div className="card-content">
+            <Image
+              src={img}
+              alt="project image"
+              priority={true}
+              width={500}
+              height={500}
+              className="card-image"
+              onClick={() => setToggleCardContent(!toggleCardContent)}
+            />
             {toggleCardContent && (
               <>
+                <h2>{title}</h2>
                 <h3>{description}</h3>
                 <br />
                 <p>{problem}</p>
                 <p>{solution}</p>
+                <div className="btn-container">
+                  <button>
+                    <Link href={repolink} target="_blank">
+                      Repo
+                    </Link>
+                  </button>
+                  <button>
+                    <Link href={demo} target="_blank">
+                      Demo
+                    </Link>
+                  </button>
+                  <button
+                    onClick={() => setToggleCardContent(!toggleCardContent)}
+                  >
+                    Hide Details
+                  </button>
+                </div>
               </>
             )}
           </div>
@@ -117,9 +111,17 @@ export default function Card({
 }
 
 export function CardList({ projects }: { projects: Props[] }) {
-  return projects.map((project: Props) => (
-    <div key={project.id} className="card-list">
-      <Card {...project} />
-    </div>
-  ));
+  return (
+    <>
+      <div className="row">
+        {projects.map((project: Props) => (
+          <div key={project.id}>
+            <div className="column">
+              <Card {...project} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }

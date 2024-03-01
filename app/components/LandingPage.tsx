@@ -68,16 +68,14 @@ export default function LandingPage({
         </>
       )}
       {toggleCard && (
-        <div className="projects-page">
+        <>
           <motion.div
-            onClick={handleToggleCard}
-            className={"box small-box"}
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
+            initial={{ opacity: 0, scale: 1.8 }}
+            animate={{ opacity: 1, scale: 1, x: [0, 80, 0] }}
             transition={{
               duration: 0.5,
               delay: 0.5,
-              ease: [0.2, 0.71, 0.2, 1.01],
+              ease: [0, 0.21, 0.2, 1.01],
               scale: {
                 type: "spring",
                 damping: 5,
@@ -86,10 +84,8 @@ export default function LandingPage({
               },
             }}
           />
-          <h1>Projects</h1>
-          <p>Here are some of my projects</p>
-          <ProjectsPage />
-        </div>
+          <ProjectsPage handleToggleCard={handleToggleCard} />
+        </>
       )}
     </>
   );

@@ -59,17 +59,6 @@ button:hover {
   max-width: 400px;
 }
 
-.btn-pink {
-  background: transparent;
-  color: var(--accent);
-  border: 1.5px solid var(--light-pink);
-}
-
-.btn-pink:hover {
-  background: var(--light-pink);
-  color: var(--background);
-}
-
 a {
   color: var(--accent);
   text-decoration: none;
@@ -85,14 +74,13 @@ a {
 
 .section {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 100%;
   padding: 0rem 2rem;
 }
 
 .container {
   display: inline-flex;
   flex-direction: column;
-  margin: 0 auto;
   width: 100%;
   z-index: 1;
   max-width: 1200px;
@@ -201,6 +189,7 @@ circle {
   transition: all 0.3s ease;
   margin-right: 2vh;
   margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 @media screen and (max-width: 800px) {
@@ -244,8 +233,8 @@ circle {
 }
 
 .small-box {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
@@ -269,8 +258,6 @@ circle {
   }
 }
 
-
-
 .dot {
   width: 80px;
   height: 80px;
@@ -288,21 +275,20 @@ circle {
   padding: 1rem .5rem;
 }
 
-
 .hello-text {
   display: flex;
   flex-wrap: wrap;
-  font-size: 4.5rem;
+  font-size: 4rem;
+  font-weight: 550;
+  line-height: normal;
 }
 
 @media screen and (max-width: 800px) {
   .hello-text {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 550;
-
   }
 }
 
@@ -336,20 +322,18 @@ circle {
   color: var(--orange);
 }
 
+
 button {
-  background: var(--yellow);
-  color: var(--background);
+  display: flex;
+  background: var(--light-pink);
   border: none;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: .5rem 1rem;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin: .5rem auto;
 }
 
 button:hover {
@@ -358,6 +342,21 @@ button:hover {
 
 button path {
   fill: var(--background);
+}
+
+.alt-btn {
+  display: flex;
+  background: var(--yellow);
+  border: none;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  margin: .5rem auto;
 }
 
 .menu-container {
@@ -376,8 +375,6 @@ button path {
   justify-content: left;
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px;
-  max-height: 600px;
 }
 
 @media screen and (max-width: 800px) {
@@ -458,21 +455,6 @@ li:hover {
   scale: 1.1;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 1rem auto;
-}
-
-.card-list {
-  display: block;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .card-image-container {
   display: flex;
   flex-direction: row;
@@ -483,27 +465,42 @@ li:hover {
   max-width: 1200px;
 }
 
-
 .card-image {
-  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0;
-  border-radius: 12%;
-  max-width: 400px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.card-image:hover {
+  transform: scale(1.1);
+  border: #ff99cc 2px solid;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 55%;
+  max-width: 100%;
+  padding: 0 4px;
 }
 
 .card-title {
   font-weight: 700;
-  text-transform: uppercase;
+  color: var(--white);
   margin: 1rem 0;
   padding: .5rem 0;
   max-width: 500px;
 }
 
 .card-title p {
-  font-weight: 550;
-  color: #88bcff;
+  font-weight: 520;
+  color: var(--sky);
   text-transform: none;
   font-size: 1rem;
   margin: 0;
@@ -514,13 +511,19 @@ li:hover {
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: left;
   margin: 1rem auto;
-  width: 100%;
-  max-width: 800px;
-  max-height: 600px;
+  max-height: fit-content;
   overflow: auto;
+  padding: 1rem;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .resume-page {
@@ -536,26 +539,33 @@ li:hover {
 
 .landing-page {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .intro {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  padding: 0rem 0rem;
-  padding-right: 5rem;
-  margin-top: -5rem;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 800px) {
   .intro {
-    padding: 0rem 2rem;
-    padding-right: 0rem;
-    margin-top: -2.5rem;
+    display: flex;
+    padding: 2rem 0;
+    font-size: 1rem;
   }
+}
+
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
 }
