@@ -467,6 +467,7 @@ li:hover {
   margin-top: 0;
   max-width: 300px;
   max-height: 300px;
+  border-radius: 10px;
 }
 
 .card-image:hover {

@@ -46,7 +46,7 @@ const ProjectsPage: React.FC = () => {
           {char}
         </motion.span>
       ))}{" "}
-      <CardList projects={projects} />;
+      <CardList projects={projects} />
     </>
   );
 };
