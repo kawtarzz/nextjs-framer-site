@@ -14,6 +14,7 @@ export default function LandingPage({
   boxClass: string;
 }) {
   const greeting = "Hello!";
+  const projectsHeading = "Projects";
   return (
     <>
       {!toggleCard && (
@@ -70,39 +71,28 @@ export default function LandingPage({
 
       {toggleCard && (
         <>
-          <motion.div
-            onClick={handleToggleCard}
-            className={"box small-box"}
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
-            transition={{
-              duration: 0.5,
-              delay: 0.5,
-              ease: [0.2, 0.71, 0.2, 1.01],
-              scale: {
-                type: "spring",
-                damping: 5,
-                stiffness: 100,
-                restDelta: 0.001,
-              },
-            }}
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 1.8 }}
-            animate={{ opacity: 1, scale: 1, x: [0, 80, 0] }}
-            transition={{
-              duration: 0.5,
-              delay: 0.5,
-              ease: [0, 0.21, 0.2, 1.01],
-              scale: {
-                type: "spring",
-                damping: 5,
-                stiffness: 100,
-                restDelta: 0.001,
-              },
-            }}
-          />
-          <ProjectsPage />
+          <div className="hello-text-container">
+            <div className="hello-text projects-page">
+              <motion.div
+                onClick={handleToggleCard}
+                className={"box small-box"}
+                initial={{ opacity: 0, scale: 1 }}
+                animate={{ opacity: 1, scale: 0.5, x: [0, 80, 0] }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.5,
+                  ease: [0.2, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
+              />
+              <ProjectsPage />
+            </div>
+          </div>
         </>
       )}
     </>
